@@ -16,6 +16,7 @@
             android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:titleEnabled="false">
 
@@ -115,7 +116,6 @@
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
                     android:textColor="@color/colorTextPrimary"
-                    android:textColorLink="@color/colorPrimary"
                     android:textSize="@dimen/detail_body_text_size" />
 
             </com.example.android.xyzreader.ui.customViews.MaxWidthLinearLayout>
@@ -130,7 +130,6 @@
         android:layout_gravity="center_vertical|end"
         android:layout_margin="24dp"
         android:src="@drawable/ic_share"
-        app:backgroundTint="@color/colorAccent"
         app:elevation="@dimen/fab_elevation"
         app:layout_anchor="@+id/meta_bar"
         app:layout_anchorGravity="bottom|end"

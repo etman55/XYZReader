@@ -90,7 +90,6 @@
                     android:paddingRight="@dimen/detail_body_top_margin"
                     android:paddingTop="@dimen/detail_body_top_margin"
                     android:textColor="@color/colorGray"
-                    android:textColorLink="@color/colorAccent"
                     android:textSize="@dimen/detail_body_text_size" />
 
             </com.example.android.xyzreader.ui.customViews.MaxWidthLinearLayout>
