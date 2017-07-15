@@ -1,0 +1,114 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="4dp"
+                app:layout_collapseMode="pin" />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="@dimen/detail_photo_height"
+                android:scaleType="centerCrop" />
+
+            <com.example.android.xyzreader.ui.customViews.MaxWidthLinearLayout
+                android:id="@+id/body_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/detail_card_top_margin"
+                android:background="#fff"
+                android:elevation="2dp"
+                android:maxWidth="@dimen/detail_card_max_width"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/meta_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#333"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
+                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
+                    android:paddingRight="@dimen/detail_inner_horiz_margin"
+                    android:paddingTop="@dimen/detail_metabar_vert_padding">
+
+                    <TextView
+                        android:id="@+id/article_title"
+                        style="?android:attr/textAppearanceLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                        android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                        android:fontFamily="sans-serif-condensed"
+                        android:lineSpacingMultiplier="0.9"
+                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/detail_title_text_size"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/article_byline"
+                        style="?android:attr/textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                        android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                        android:textColor="#8fff" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/article_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
+                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+                    android:paddingBottom="@dimen/detail_body_top_margin"
+                    android:paddingLeft="@dimen/detail_body_top_margin"
+                    android:paddingRight="@dimen/detail_body_top_margin"
+                    android:paddingTop="@dimen/detail_body_top_margin"
+                    android:textColor="@color/colorGray"
+                    android:textColorLink="@color/colorAccent"
+                    android:textSize="@dimen/detail_body_text_size" />
+
+            </com.example.android.xyzreader.ui.customViews.MaxWidthLinearLayout>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_share"
+        app:backgroundTint="@color/colorAccent"
+        app:elevation="@dimen/fab_elevation"
+        app:layout_anchor="@+id/meta_bar"
+        app:layout_anchorGravity="top|end"
+        app:layout_behavior="com.example.android.xyzreader.ui.customViews.FABScrollBehavior"
+        app:rippleColor="@android:color/white" />
+</android.support.design.widget.CoordinatorLayout>
