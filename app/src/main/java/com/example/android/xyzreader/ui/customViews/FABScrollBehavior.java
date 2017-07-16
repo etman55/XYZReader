@@ -27,7 +27,18 @@ public class FABScrollBehavior extends FloatingActionButton.Behavior {
     public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
         if (dyConsumed > 0 && child.getVisibility() == View.VISIBLE)
-            child.hide();
+            child.hide(new FloatingActionButton.OnVisibilityChangedListener() {
+                /**
+                 * Called when a FloatingActionButton has been hidden
+                 *
+                 * @param fab the FloatingActionButton that was hidden.
+                 */
+                @Override
+                public void onHidden(FloatingActionButton fab) {
+                    super.onShown(fab);
+                    fab.setVisibility(View.INVISIBLE);
+                }
+            });
         else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE)
             child.show();
     }
